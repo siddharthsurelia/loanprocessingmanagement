@@ -1,0 +1,285 @@
+body {
+    font-family: 'Roboto';
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  .tile {
+    background: #262626 linear-gradient(to left, #db3839 50%, #262626 50%) repeat scroll 0 0 / 200% 100%;
+    border: 1px solid #1c1e22;
+    color: #FFF;
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-position 0.1s ease 0s;
+    vertical-align: top;
+  }
+    
+    .tile:hover {
+      background-position: 100% 0;
+      color: #FFFFFF;
+      cursor: pointer;
+      -webkit-transform: scale(0.97) perspective(400px);
+      -moz-transform: scale(0.97) perspective(400px));
+      -ms-transform: scale(0.97) perspective(400px);
+      transform: scale(0.97) perspective(400px);
+    }
+  
+  .tile > span {
+    bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .icon-tile {
+    height: 150px;
+    width: 265px;
+  }
+  
+    .icon-tile i {
+      font-size: 80px;
+    }
+  
+  .imvu-tile {
+    height: 93px;
+    width: 120x;
+  }
+  
+  .youtube-tile {
+    height: 130px;
+  }
+
+  .login_block{
+    margin: auto;
+    margin-top: -20px;
+margin-left: 20%;
+ width :60% ;
+ padding: 10px;
+ text-align: center;
+overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fcf7f7;
+  border-radius: 5px;
+}
+.employee_block{
+  margin: auto;
+  margin-top: -30px;
+padding: 10px;
+overflow: auto;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+background-color: #fcf7f7;
+border-radius: 5px;
+}
+.login_block h3{
+    color: dimgrey;
+}
+.input_field{
+    border: 0;
+    background: none;
+    display:block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #807f7d;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    text-emphasis: none;
+transition:all 1s;
+     font-size:15px;
+ font-weight:bold;
+
+}
+.input_field:hover{
+    width:280px;
+      transition:all 1s;
+      border: 2px solid #5A7DA0;
+}
+.save_button{
+    background: none;
+    transition: all 0.2s linear;
+    width : 150px;
+    margin: 20px auto;
+    border: 2px solid #1C72B6;
+    padding: 14px 10px;
+    border-radius: 10px;
+    font-size:15px;
+    font-weight:bold;
+   
+   color: #1C72B6;
+}
+.save_button:hover {
+    background: #085CAF;
+    color:#fff;
+    transition: all 0.2s linear;
+    cursor: pointer; 
+}
+.bar{
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -8px;
+    background-color:#354a5f;
+  }
+  .modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  padding-top: 100px; /* Location of the box */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */ 
+	}
+  /* Modal Content */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: auto;
+	  padding: 10px;
+	  border: 1px solid #888;
+	  width: 60%;
+	  height: auto;
+	  margin-bottom: 200px;
+
+	}
+
+	/* The Close Button */
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+	
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+  }
+.popIn {
+    -webkit-animation-name: popIn;
+    animation-name: popIn;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
+
+@keyframes popIn {
+    0% {
+        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
+        opacity: 0; }
+    20% {
+        opacity: 1; }
+    40% {
+        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        -webkit-transform: scale3d(1.08, 1.08, 1.08);
+        transform: scale3d(1.08, 1.08, 1.08); }
+    60% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1); }
+    80% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03); }
+    100% {
+        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1); } }
+        .spin {
+            -webkit-animation-name: spin;
+            animation-name: spin;
+            animation-delay:0.2s;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s; }
+          
+          @keyframes spin {
+            0% {
+              -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+              animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+              -webkit-transform: rotateZ(0deg);
+              transform: rotateZ(0deg);
+              -webkit-transform-origin: center center;
+              transform-origin: center center; }
+            20% {
+              -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+              animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+              -webkit-transform: rotateZ(-20deg);
+              transform: rotateZ(-20deg);
+              -webkit-transform-origin: center center;
+              transform-origin: center center; }
+            70% {
+              -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+              animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+              -webkit-transform: rotateZ(380deg);
+              transform: rotateZ(380deg);
+              -webkit-transform-origin: center center;
+              transform-origin: center center; }
+            100% {
+              -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+              animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+              -webkit-transform: rotateZ(360deg);
+              transform: rotateZ(360deg);
+              -webkit-transform-origin: center center;
+              transform-origin: center center; } }
+
+              #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                left: 50%;
+                bottom: 30px;
+                font-size: 17px;
+              }
+              
+              #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+              }
+              
+              @-webkit-keyframes fadein {
+                from {bottom: 0; opacity: 0;} 
+                to {bottom: 30px; opacity: 1;}
+              }
+              
+              @keyframes fadein {
+                from {bottom: 0; opacity: 0;}
+                to {bottom: 30px; opacity: 1;}
+              }
+              
+              @-webkit-keyframes fadeout {
+                from {bottom: 30px; opacity: 1;} 
+                to {bottom: 0; opacity: 0;}
+              }
+              
+              @keyframes fadeout {
+                from {bottom: 30px; opacity: 1;}
+                to {bottom: 0; opacity: 0;}
+              }

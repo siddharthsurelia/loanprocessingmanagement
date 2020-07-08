@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Loan Processing Management</a>
+    
+    <div class="dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="userBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+      </button>
+      <div class="dropdown-menu" aria-labelledby="userBtn">
+        <a class="dropdown-item" href="#" id='logoutBtn'>Logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="container mt-4">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee Name</th>
+          <th scope="col">Loan Type</th>
+          <th scope="col">Interest Rate</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Time Period (in Years)</th>
+          <th scope="col">Status</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody id='table-body'>
+      <!-- Dynamic Data -->      
+      </tbody>
+    </table>
+
+  </section>
+
+  <script src="https://kit.fontawesome.com/5bdd5ff8d6.js" crossorigin="anonymous"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src='js/api/api.js'></script>
+  <script src='js/script.js'></script>
+</body>
+
+</html>

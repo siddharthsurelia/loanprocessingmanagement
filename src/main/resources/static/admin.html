@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MASS India Pvt. Ltd. </title>
+        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <!-- Font special for pages-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+        <!-- Vendor CSS-->
+        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Main CSS-->
+        <link href="css/common.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="./css/style.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">                
+      </head>
+<body> 
+    <!-- <div class="bar">
+		<i class="fa fa-angle-left backbutton" style="font-size:48px;color:#FFFFFF; margin-left:20px;" onclick="window.history.back();"></i>
+	
+</div> -->
+<!-- <h1 style="text-align: center; font-family: Roboto;">Admin Dashboard</h1> -->
+<div class="w3-bar w3-black">
+    
+    <a onclick="displayUser();" class="w3-bar-item w3-button">Employees</a>
+    <a onclick="displayLoan();" class="w3-bar-item w3-button">Loans</a>
+    <a onclick="logOut();" class="w3-bar-item w3-button" style="float: right;">Log Out</a>
+    </div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="displayEmployees" style=" display: block;">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn" style="margin-left: -100px;" > 
+                <div class="card-body">
+                    <h3>Employee List</h3>
+                    <button class="w3-button w3-circle w3-black" id="addUserBtn" style="float: right; margin-top: -50px;">+</button>
+                
+                    <table class="w3-table-all">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id='users-list'>
+                            <!-- Dynamic Data -->
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="displayLoans" style=" display: none;">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn" style="margin-left: -100px;" > 
+                <div class="card-body">
+                    <h3>Loan List</h3>
+                    <button class="w3-button w3-circle w3-black" id="addLoanBtn" style="float: right; margin-top: -50px;">+</button>
+                   
+                    <table class="w3-table-all">
+                        <thead>
+                        <tr>
+                          <th>Loan Type</th>
+                          <th>Interest Rate</th>
+                          <th>Time Period</th>
+                          <th>Minimum Salary Required</th>
+                          <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id='loans-list'>
+                       <!-- Dynamic Data -->
+                    </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+    </div>
+<!--     
+Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="uReg" >
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn" > 
+                <div class="card-body">
+                    <h2 class="title">User Registration Form</h2>
+                    <form method="POST">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Employee full name</label>
+                                    <input class="input--style-4" type="text" id="full_name" name='userName' required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">User name</label>
+                                    <input class="input--style-4" type="text" id="user_name" name='userLogin' required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">                            
+                            <div class="input-group">
+                                <label class="label">password</label>
+                                <input class="input--style-4" type="password" id="pwd" name='userPassword' required>
+                            </div>                                                    
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <textarea class="input--style-4" name='userAddress' required></textarea>                                    
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Salary</label>
+                                    <input class="input--style-4" type="number" name="salary" step="0.01" min='5000' required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="userMobileNo" id="phone" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Reports To</label>
+                                    <input class="input--style-4" type="text" name="reportsTo" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">User Type</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="userType" required>
+                                    <option disabled="disabled" selected="selected" value=''>Choose option</option>
+                                    <option value='Employee'>Employee</option>
+                                    <option value='Manager'>Manager</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Finance">Finance</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  
+  </div>
+
+  <div id="myModal2" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="lReg">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn">
+                <div class="card-body">
+                    <h2 class="title">Loan Registration Form</h2>
+                    <form method="POST">
+                        
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Loan Type</label>
+                                    <input class="input--style-4" type="text" id="l_type" name='loanType'>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Loan Description</label>
+                                    <textarea class="input--style-4" id="l_desc" name='loanDescription'></textarea>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Interest Rate</label>
+                                    <input class="input--style-4" type="number" step='0.01' id="iRate" name='interestRate'>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Minimum Period</label>
+                                    <input class="input--style-4" type="number" id="min" min='1' name='minPeriod'>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Maximum Period</label>
+                                    <input class="input--style-4" type="number" id="max" min='1' name='maxPeriod'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Minimum Salary</label>
+                                    <input class="input--style-4" type="number" id="minSalary" min='5000' name='minSalaryRequired'>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+  <!--     
+Modal -->
+<div id="updateForm" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="uReg" >
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn" > 
+                <div class="card-body">
+                    <h2 class="title">User Update Form</h2>
+                    <form method="POST">
+                        <div class="row row-space">
+                            <input type="hidden" value='' name='userId' />
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Employee full name</label>
+                                    <input class="input--style-4" type="text" name='userName' required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">User name</label>
+                                    <input class="input--style-4" type="text" name='userLogin' required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">                            
+                            <div class="input-group">
+                                <label class="label">password</label>
+                                <input class="input--style-4" type="password" name='userPassword' required>
+                            </div>                                                    
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <textarea class="input--style-4" name='userAddress' required></textarea>                                    
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Salary</label>
+                                    <input class="input--style-4" type="number" name="salary" step="0.01" min='5000' required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="userMobileNo" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Reports To</label>
+                                    <input class="input--style-4" type="text" name="reportsTo" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">User Type</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="userType" required>
+                                    <option disabled="disabled" selected="selected" value=''>Choose option</option>
+                                    <option value='Employee'>Employee</option>
+                                    <option value='Manager'>Manager</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Finance">Finance</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  
+  </div>
+  
+  <div id="updateLoanForm" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins" id="lReg">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4 popIn">
+                <div class="card-body">
+                    <h2 class="title">Loan Registration Form</h2>
+                    <form method="POST">
+                        <input type="hidden" name='loanId' name='loanId'>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Loan Type</label>
+                                    <input class="input--style-4" type="text"  name='loanType'>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Loan Description</label>
+                                    <textarea class="input--style-4"  name='loanDescription'></textarea>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Interest Rate</label>
+                                    <input class="input--style-4" type="number" step='0.01' name='interestRate'>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Minimum Period</label>
+                                    <input class="input--style-4" type="number"  min='1' name='minPeriod'>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Maximum Period</label>
+                                    <input class="input--style-4" type="number"  min='1' name='maxPeriod'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Minimum Salary</label>
+                                    <input class="input--style-4" type="number"  min='5000' name='minSalaryRequired'>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->    
+    <script src="js/api/api.js"></script>
+    <script src="js/admin.js"></script>    
+</body>
+</html>
+
+

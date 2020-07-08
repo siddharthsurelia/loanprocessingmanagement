@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.7/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/snackbar.css">
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Loan Processing Management</a>
+    
+    <div class="dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="userBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Macvin
+      </button>
+      <div class="dropdown-menu" aria-labelledby="userBtn">
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#userAccount" id='myAccountBtn'>My Account</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#userLoanDetails" id='myLoanBtn'>My Loan</a>
+        <a class="dropdown-item" href="#" onclick='logout()'>Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container mt-4">
+
+    <div id='loan-list'>
+      <!-- rendered from script -->
+    </div>
+
+  </section>
+
+  <!-- User Details Modal -->
+  <div class="modal fade" id="userAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">User Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group" id='user-detail'>
+            
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Loan Details -->
+  <div class="modal fade" id="userLoanDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 80vw !important;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Loans Applied</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id='appliedLoans'>
+          
+          <div class="card">
+            <div class="card-body">
+              <div>Home Loan</div>
+              This is some text within a card body.
+              <div>
+                <span class="form-control-sm">Interest Rate : 2.1</span>
+                <span class="form-control-sm">Time Period : 5 Years</span>
+                <span class="form-control-sm">Status : Approved</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="snackbar">Your request has been sent to your manager.</div>
+  
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src='js/api/api.js'></script>
+  <script src='js/employee.js'></script>
+</body>
+
+</html>

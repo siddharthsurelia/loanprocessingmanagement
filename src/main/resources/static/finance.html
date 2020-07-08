@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.7/css/font-awesome.min.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Loan Processing Management</a>
+    
+    <div class="dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="userBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Macvin
+      </button>
+      <div class="dropdown-menu" aria-labelledby="userBtn">
+        <a class="dropdown-item" href="#" onclick='logout()'>Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container mt-4">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#loanProcessing" role="tab" aria-controls="home" aria-selected="true">Loan Processing</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#payroll" role="tab" aria-controls="profile" aria-selected="false">Payroll</a>
+      </li> -->
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      
+      <div class="tab-pane fade show active" id="loanProcessing" role="tabpanel" aria-labelledby="home-tab">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Loan Type</th>
+              <th scope="col">Interest Rate</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Time Period (in Years)</th>              
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody id='table-body'>
+          <!-- Dynamic Data -->      
+          </tbody>
+        </table>
+      </div>
+<!--       
+      <div class="tab-pane fade" id="payroll" role="tabpanel" aria-labelledby="profile-tab">
+        ...
+      </div>       -->
+    </div>
+
+    
+
+  </section>
+
+  
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src='js/api/api.js'></script>
+  <script src='js/finance.js'></script>
+  
+</body>
+</html>

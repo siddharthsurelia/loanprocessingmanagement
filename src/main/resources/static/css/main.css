@@ -1,0 +1,147 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.h-50{height: 50vh !important;}
+.h-70{height: 70vh !important;}
+.h-75{height: 75vh !important;}
+
+body{
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.alternate{
+  background-color: #f9f9f9 !important;
+}
+
+.main-header{
+  height: 10vh;
+	background-color: #2f3b59;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	z-index: 99;
+}
+
+.start-section{
+	margin-top: 10vh;
+	background-color: grey;
+}
+
+.show-reg-form {
+	float:right;
+	color:#666;
+	cursor:pointer;
+	margin-right:40px;
+	position:relative;
+	top:1.5rem;
+	font-size:13px;
+	font-weight:600;
+}
+
+.intro-item{
+	padding-top: 10rem;
+	color: #f9f9f9;
+}
+
+.intro-item h2{
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	font-weight: bold;
+}
+
+.intro-item h3{
+	font-size: small;
+	padding-bottom: 1rem;
+}
+
+.fl-wrap {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.main-search-input-wrap {
+	max-width: 900px;
+	margin: 20px auto;
+	position: relative;
+}
+
+.main-search-input {
+	background: #fff;
+	padding: 0 120px 0 0;
+	border-radius: 30px;
+	margin-top: 50px;
+	box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.3);
+}
+
+.main-search-input-item {
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	border-right: 1px solid #eee;
+	height: 50px;
+	position: relative;
+}
+
+.main-search-button {
+	position: absolute;
+	right: 0px;
+	height: 50px;
+	width: 120px;
+	color: #fff;
+	top: 0;
+	border: none;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	cursor: pointer;
+	background-color: #4DB7FE;
+}
+
+.main-search-input-item input:first-child {
+	border-radius: 100%;
+}
+
+.main-search-input-item input {
+	float: left;
+	border: none;
+	width: 100%;
+	height: 50px;
+	padding-left: 20px;
+}
+
+.main-search-input:before {
+	content: '';
+	position: absolute;
+	bottom: -40px;
+	width: 50px;
+	height: 1px;
+	background: rgba(255,255,255,0.41);
+	left: 50%;
+	margin-left: -25px;
+}
+
+.to-top {
+	position: fixed;
+	bottom: 60px;
+	right: 50px;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+	font-size: 17px;
+	background: #4DB7FE;
+	z-index: 116;
+	cursor: pointer;
+	display: none;
+	border-radius: 3px;
+	box-shadow: 0px 0px 0px 7px rgba(255,255,255,0.2);
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.to-top:hover , .color-bg-link:hover {
+	background: #2C3B5A;
+	color:#fff;
+}
