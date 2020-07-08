@@ -1,5 +1,5 @@
 #!/bin/bash
-# Creating admin user
+# Creating administrator user
 curl --location --request POST 'http://localhost:8080/lpm/api/v1/user' --header 'Content-Type: application/json' --data-raw '{
 	"userLogin": "admin",
   	"userPassword": "admin",
